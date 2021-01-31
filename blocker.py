@@ -1,4 +1,3 @@
-from datetime import datetime as dt
 from pathlib import Path
 from shutil import copy
 import sys
@@ -11,6 +10,7 @@ except:
 APP_NAME = 'Website Blocker'
 REDIRECT = '127.0.0.1'
 WIN_PATH = r'C:\Windows\System32\drivers\etc'
+ICON_PATH = 'icon.ico'
 
 host_path = Path(WIN_PATH)
 host_file = host_path/'hosts'
@@ -22,7 +22,8 @@ class Blocker():
 		self.redirect = redirect
 		with open('blocklist.txt') as file:
 			self.blocked = [line.rstrip() for line in file]
-		if not host_file_copy.exists(): self._setup()
+		if not host_file_copy.exists():
+			self._setup()
 		self._create_blocked_list()
 
 	def _setup(self):
@@ -66,7 +67,7 @@ class Blocker():
 	def notify(self, message, title=APP_NAME):
 		print(message)
 		if toaster:
-			toaster.show_toast(title, message, duration=5)
+			toaster.show_toast(title, message, duration=5) # icon_path=ICON_PATH, 
 
 	def _raise_permission_error(self):
 		self.notify("Permission Error. Please run the command line tool as ADMINISTRATOR.")

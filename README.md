@@ -7,7 +7,7 @@ This Python script blocks certain websites from being accessed. You can customiz
 ## How to install
 **The Python Website Blocker currently only works for Windows.**
 Download `blocker.py` and `blocklist.txt` and place them in the same directory.
-You can `pip install win10toast` for nice Windows notifications. But you don't have to, notifications are also printed in your command line tool.
+You can `pip install win10toast` for [nice Windows notifications](https://github.com/jithurjacob/Windows-10-Toast-Notifications) from. But you don't have to, notifications are also printed in your command line tool.
 
 ## How to run
 To run the block script, **you have to run your command line tool with administrator privileges.**
