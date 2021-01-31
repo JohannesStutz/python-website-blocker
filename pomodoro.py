@@ -13,7 +13,7 @@ if __name__=='__main__':
 		blocker.notify(f"Pomodoro no. {turn} started, work for {WORK} minutes")
 		sleep(WORK*60)
 		blocker.unblock()
-		if turn == POMODOROS:
+		if turn < POMODOROS:
 			blocker.notify(f"Pomodoro no. {turn} ended, take a {BREAK} minutes break")
 			sleep(BREAK*60)
 		else:
